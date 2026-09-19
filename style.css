@@ -340,6 +340,7 @@ width: 85%;
   font-weight: 500;
   font-size: 30px;
   margin: 0 0 20px 0;
+  font-size: clamp(20px, 3vw, 30px);
 }
 #subscribe .enter-email-container{
   display: flex;
@@ -347,7 +348,8 @@ width: 85%;
   width: 100%;
 }
 .enter-email-container input{
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 50px;
   font-size: 18px;
   border: none;
