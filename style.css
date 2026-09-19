@@ -238,6 +238,7 @@ body {
   border-radius: 12px;
 }
 
+
 #client .client-picture{
   display: flex;
   align-items: center;
@@ -265,6 +266,7 @@ body {
   flex-direction: column;
   align-items:center;
 }
+
 
 #testimonial .testimonial-text {
   font-weight: bold;
@@ -297,6 +299,11 @@ body {
   padding: 25px 20px;
   box-sizing: border-box;
   border: 1px solid rgba(232, 163, 61, 0.2);
+  transition: transform 0.15s;
+}
+
+#testimonial .testimonial-body:hover{
+  transform: translateY(-5px);
 }
 
 .testimonial-body-picture-container img{
