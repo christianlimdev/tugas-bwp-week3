@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Latihan 6 - Bilangan Prima</title>
+	</head>
+	<body>
+		<script>
+			let batas = parseInt(window.prompt("Masukkan angka batas:"));
+
+			document.write(`Bilangan prima dari 1 sampai ${batas} adalah:<br />`);
+
+			// Perulangan luar: Cek setiap angka dari 2 sampai batas
+			for (let i = 2; i <= batas; i++) {
+				let jumlahPembagi = 0;
+
+				// Perulangan dalam: Hitung ada berapa angka yang bisa membagi habis 'i'
+				for (let j = 1; j <= i; j++) {
+					if (i % j === 0) {
+						jumlahPembagi++;
+					}
+				}
+
+				// Jika pembaginya HANYA 2 (yaitu 1 dan angka itu sendiri), maka PRIMA
+				if (jumlahPembagi === 2) {
+					document.write(i + " ");
+				}
+			}
+		</script>
+	</body>
+</html>

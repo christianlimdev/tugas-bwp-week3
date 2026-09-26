@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Latihan 3</title>
+	</head>
+	<body>
+		<script>
+			function cekSalam(jam) {
+				if (jam >= 23 || jam <= 5) {
+					return "Jam 23-5: Selamat Tidur";
+				} else if (jam >= 6 && jam <= 10) {
+					return "Jam 6-10: Selamat Pagi";
+				} else if (jam >= 11 && jam <= 14) {
+					return "Jam 11-14: Selamat Siang";
+				} else if (jam >= 15 && jam <= 17) {
+					return "Jam 15-17: Selamat Sore";
+				} else if (jam >= 18 && jam <= 22) {
+					return "Jam 18-22: Selamat Malam";
+				}
+			}
+			
+			let jam = parseInt(window.prompt("Jam Sekarang"));
+
+			// selama jam bukan angka (NaN) ATAU kurang dari 0 ATAU lebih dari 23
+			while (isNaN(jam) || jam < 0 || jam > 23) {
+				jam = parseInt(window.prompt("Input tidak valid! Masukkan angka jam dari 0 - 23:"));
+			}
+      document.write(`<br /><b>${cekSalam(jam)}</b>`);
+			// document.write("<br />" + `<b>${cekSalam(jam)}</b>`);
+      alert(`${cekSalam(jam)}`);
+		</script>
+	</body>
+</html>

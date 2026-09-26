@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Latihan 2</title>
+	</head>
+	<body>
+		<script>
+			function cekGrade(nilai_akhir) {
+					if (nilai_akhir >= 85) {
+						return "A";
+					} else if (nilai_akhir >= 80) {
+						return "A-";
+					} else if (nilai_akhir >= 75) {
+						return "B+";
+					} else if (nilai_akhir >= 70) {
+						return "B";
+					} else if (nilai_akhir >= 65) {
+						return "B-";
+					} else if (nilai_akhir >= 60) {
+						return "C+";
+					} else if (nilai_akhir >= 55) {
+						return "C";
+					} else if (nilai_akhir >= 50) {
+						return "C-";
+					} else {
+						return "D";
+					}
+				}
+
+				function cekNilai(nilai_akhir) {
+					if (nilai_akhir >= 55) {
+						return "Lulus";
+					} else {
+						return "Gagal";
+					}
+				}
+
+			document.write("<br />" + "KRITERIA PENILAIAN:" + "<br />" + "TUGAS 30%" + "<br />" + "UTS 30%" + "<br />" + "UAS 40%" + "<br />");
+			let jumlahMhs = parseInt(window.prompt("Jumlah Mahasiswa"));
+			for (i = 1; i <= jumlahMhs; i++) {
+				console.log("test");
+				let nama = window.prompt("Nama");
+				let nilai_tugas = parseFloat(window.prompt("Nilai Tugas"));
+				let nilai_uts = parseFloat(window.prompt("Nilai UTS"));
+				let nilai_uas = parseFloat(window.prompt("Nilai UAS"));
+
+				document.write("<br /><br />" + i + ". " + nama + "<br />");
+				document.write("Tugas: " + nilai_tugas);
+				document.write("<br />UTS: " + nilai_uts);
+				document.write("<br />UAS: " + nilai_uas);
+
+				let nilai_akhir = nilai_tugas * 0.3 + nilai_uts * 0.3 + nilai_uas * 0.4;
+				document.write("<br />Nilai Akhir: " + nilai_akhir.toFixed(2));
+				document.write("<br />Grade: " + cekGrade(nilai_akhir));
+			
+
+				document.write("<br />Status: " + cekNilai(nilai_akhir));
+				
+			}
+		</script>
+	</body>
+</html>

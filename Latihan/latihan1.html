@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Latihan 1</title>
+	</head>
+	<body>
+		<script>
+			function cekNilai(nilai_akhir) {
+				if (nilai_akhir >= 60) {
+					return "Lulus";
+				} else {
+					return "Gagal";
+				}
+			}
+			let nama = window.prompt("Nama");
+			let nilai_tugas = parseInt(window.prompt("Nilai Tugas"));
+			let nilai_uts = parseInt(window.prompt("Nilai UTS"));
+			let nilai_uas = parseInt(window.prompt("Nilai UAS"));
+
+			let nilai_akhir = (nilai_tugas * 0.3) + (nilai_uts * 0.3) + (nilai_uas * 0.4);
+
+      alert(`${nama}, Nilai akhir kamu: ${nilai_akhir}\nStatus: ${cekNilai(nilai_akhir)}`);
+		</script>
+	</body>
+</html>

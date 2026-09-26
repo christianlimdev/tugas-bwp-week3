@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grafik Kehadiran</title>
+  </head>
+  <body>
+    <script>
+      const hari = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat"];
+      const kehadiran = [];
+
+      // Loop untuk ambi input tiap hari
+      for (let i = 0; i < hari.length; i++) {
+        let input, nilai;
+        do {
+          input = window.prompt(`Input Total Kehadiran ${hari[i]}`);
+
+          if (input === null || input.trim() === "") {
+            alert(`Input ${hari[i]} tidak boleh kosong atau dibatalkan!`);
+            continue;
+          }
+
+          nilai = parseInt(input);
+
+          if (isNaN(nilai) || nilai < 0) {
+            alert(`Input ${hari[i]} tidak valid! Masukkan angka positif/nol.`);
+          }
+        } while (input === null || input.trim() === "" || isNaN(nilai) || nilai < 0);
+
+        kehadiran.push(nilai);
+      }
+
+      function buatGrafik(jumlah) {
+        let grafik = "";
+        for (let i = 0; i < jumlah; i++) {
+          grafik += "x";
+        }
+        return grafik; 
+      }
+
+      // Tampilin Hasil
+      document.write("<b>Grafik Jumlah Kehadiran Mahasiswa</b><br /><br />");
+
+      for (let i = 0; i < hari.length; i++) {
+        document.write(`${hari[i]}: ${buatGrafik(kehadiran[i])}<br />`);
+      }
+    </script>
+  </body>
+</html>

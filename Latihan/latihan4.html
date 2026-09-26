@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Latihan 4</title>
+	</head>
+	<body>
+		<script>
+			function cekOpsi(opsi, a, b) {
+				if (opsi == "keliling") {
+					let temp = (a + b) * 2;
+					return `Keliling = ${temp}`;
+				} else {
+					let temp = a * b;
+					return `Luas = ${temp}`;
+				}
+			}
+			let inputPanjang, panjang;
+			let inputLebar, lebar;
+			let opsi;
+
+			do {
+				inputPanjang = window.prompt("Input Panjang (berupa angka)");
+				if (inputPanjang === null || inputPanjang.trim() === "") {
+					alert("Input Panjang tidak boleh kosong kak");
+					continue;
+				}
+
+				panjang = parseInt(inputPanjang);
+				if (isNaN(panjang) || panjang <= 0) {
+					alert("Input Panjang tidak valid kak! Masukkan angka positif.");
+				}
+
+			} while (inputPanjang === null || inputPanjang.trim() === "" || isNaN(panjang) || panjang <= 0);
+
+			do {
+				inputLebar = window.prompt("Input Lebar (berupa angka):");
+
+				if (inputLebar === null || inputLebar.trim() === "") {
+					alert("Input Lebar tidak boleh kosong atau dibatalkan!");
+					continue;
+				}
+
+				lebar = parseInt(inputLebar);
+
+				if (isNaN(lebar) || lebar <= 0) {
+					alert("Input Lebar tidak valid! Masukkan angka positif.");
+				}
+			} while (inputLebar === null || inputLebar.trim() === "" || isNaN(lebar) || lebar <= 0);
+
+			do {
+				opsi = window.prompt("Input opsi (keliling/luas):");
+				if (opsi != "keliling" && opsi != "luas") {
+					alert("Input Opsi yang benar keliling/luas");
+				}
+			} while (opsi != "keliling" && opsi != "luas");
+
+			alert(`Berhasil!\n` + `Panjang: ${panjang}, Lebar: ${lebar}\n` + cekOpsi(opsi, panjang, lebar));
+			document.write(`Berhasil!` + "<br />"+ `Panjang: ${panjang}, Lebar: ${lebar}` + "<br />" + cekOpsi(opsi, panjang, lebar));
+		</script>
+	</body>
+</html>
